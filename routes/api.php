@@ -17,11 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('getAllCandidats',  function(){
-    return array(
-            array(
-                'nom'       => 'back nom',
-                'prenom'    => 'back prenom',
-                'email'     => 'back email',
-            ));
-});
+Route::get('getAllCandidats',   'CandidatController@getAll');
